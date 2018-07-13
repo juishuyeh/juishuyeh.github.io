@@ -19,10 +19,12 @@
 <meta property="og:site_name" content="Fin Data">
 <meta property="og:description" content="標題一內文測試 標題二">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-13T12:29:03.395Z">
+<meta property="og:image" content="https://i.imgur.com/fwO0TqB.jpg">
+<meta property="og:updated_time" content="2018-07-13T17:02:21.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Hexo">
 <meta name="twitter:description" content="標題一內文測試 標題二">
+<meta name="twitter:image" content="https://i.imgur.com/fwO0TqB.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Fin Data" type="application/atom+xml">
   
@@ -59,10 +61,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "css/images/pose01.jpg,https://source.unsplash.com/collection/954550/1920x1080,https://source.unsplash.com/collection/954550/1920x1081".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -108,6 +132,16 @@
           <section id="main" style="float:none;"><article id="post-Hello-Hexo" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="https://i.imgur.com/fwO0TqB.jpg" rel="gallery_cjjka2fnr00036fw6vymtpw5w">
+        <img src="https://i.imgur.com/fwO0TqB.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
     
       <header class="article-header">
         
@@ -183,11 +217,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/07/14/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/14/Work-Smart/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Hello World
+          Work-Smart
         
       </div>
     </a>
@@ -257,6 +291,9 @@
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>
