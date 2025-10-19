@@ -9,24 +9,6 @@
     <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
     <lastBuildDate>Fri, 10 Oct 2025 12:37:13 +0800</lastBuildDate><atom:link href="https://juishuyeh.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://juishuyeh.github.io/post/my-first-post/</link>
-      <pubDate>Fri, 10 Oct 2025 12:37:13 +0800</pubDate>
-      
-      <guid>https://juishuyeh.github.io/post/my-first-post/</guid>
-      <description>
-        
-          
-            &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;h2 id=&#34;內容&#34;&gt;內容&lt;/h2&gt;
-&lt;h2 id=&#34;總結&#34;&gt;總結&lt;/h2&gt;
-          
-          
-        
-      </description>
-    </item>
-    
-    <item>
       <title>02_concurrency</title>
       <link>https://juishuyeh.github.io/post/golang/02_concurrency/</link>
       <pubDate>Fri, 10 Oct 2025 12:24:53 +0800</pubDate>
