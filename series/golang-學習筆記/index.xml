@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang 學習筆記 on JSYEH</title>
+    <link>https://juishuyeh.github.io/series/golang-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</link>
+    <description>Recent content in Golang 學習筆記 on JSYEH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 10 Oct 2025 12:24:53 +0800</lastBuildDate><atom:link href="https://juishuyeh.github.io/series/golang-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>02_concurrency</title>
+      <link>https://juishuyeh.github.io/post/golang/02_concurrency/</link>
+      <pubDate>Fri, 10 Oct 2025 12:24:53 +0800</pubDate>
+      
+      <guid>https://juishuyeh.github.io/post/golang/02_concurrency/</guid>
+      <description>
+        
+          
+            &lt;h2 id=&#34;-學習目標&#34;&gt;📚 學習目標&lt;/h2&gt;
+&lt;p&gt;本文將探討：&lt;/p&gt;
+&lt;h2 id=&#34;-核心概念&#34;&gt;💡 核心概念&lt;/h2&gt;
+&lt;h2 id=&#34;-程式碼範例&#34;&gt;🔨 程式碼範例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello, Golang!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-重點筆記&#34;&gt;📝 重點筆記&lt;/h2&gt;
+&lt;h2 id=&#34;關鍵要點&#34;&gt;關鍵要點&lt;/h2&gt;
+&lt;h2 id=&#34;常見陷阱&#34;&gt;常見陷阱&lt;/h2&gt;
+&lt;h2 id=&#34;-延伸閱讀&#34;&gt;🔗 延伸閱讀&lt;/h2&gt;
+&lt;h2 id=&#34;官方文件&#34;&gt;官方文件&lt;/h2&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>01_Golang 入門心得</title>
+      <link>https://juishuyeh.github.io/post/golang/01_golang/</link>
+      <pubDate>Thu, 09 Oct 2025 19:56:41 +0800</pubDate>
+      
+      <guid>https://juishuyeh.github.io/post/golang/01_golang/</guid>
+      <description>
+        
+          
+            &lt;h2 id=&#34;心得&#34;&gt;心得&lt;/h2&gt;
+&lt;p&gt;最近在學 golang ，學習 golang 的過程中，發現 golang 的語法設計的非常簡潔，讓人很容易上手。&lt;/p&gt;
+&lt;p&gt;設計理念也和 python 不同，而且沒有 class 相關的概念。&lt;/p&gt;
+&lt;p&gt;要從 python 的使用思維移轉到 golang 的使用思維，還需要一段時間。&lt;/p&gt;
+&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+&lt;p&gt;總之，golang 是一個很棒的語言，值得學習。&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
